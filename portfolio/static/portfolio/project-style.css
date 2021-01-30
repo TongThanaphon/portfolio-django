@@ -1,0 +1,75 @@
+.project-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 200px;
+
+  padding: 10px;
+
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 10px;
+  box-shadow: 0px 4px 0px rgb(54, 54, 54);
+}
+
+.project-card-link:hover {
+  border: 2px solid red;
+
+  box-shadow: 0px 4px 0px red;
+
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 200px;
+
+  padding: 10px;
+
+  border: 2px solid rgb(54, 54, 54);
+  box-shadow: 0px 4px 0px rgb(54, 54, 54);
+  border-radius: 10px;
+}
+
+.project-card:hover {
+  border: 2px solid orange;
+
+  box-shadow: 0px 4px 0px orange;
+
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+.project-link {
+  text-decoration: none;
+  color: black;
+}
+
+.project-card-link > p + p,
+.project-card > p + p {
+  margin-top: 20px;
+}
+
+.project-text-bold {
+  font-weight: bold;
+}

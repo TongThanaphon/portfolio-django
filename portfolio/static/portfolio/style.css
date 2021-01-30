@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  background-image: linear-gradient(
+    172.6deg,
+    rgba(21, 13, 15, 1) 17.6%,
+    rgba(84, 84, 84, 1) 98.6%
+  );
+}
+
+.container {
+  padding: 20px 20px 40px 20px;
+
+  background-image: linear-gradient(
+    172.6deg,
+    rgba(21, 13, 15, 1) 46.6%,
+    rgba(84, 84, 84, 1) 90.6%
+  );
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 36px;
+
+  margin-top: 64px;
+}
+
+p {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 120%;
+
+  color: #ffffff;
+}
