@@ -13,119 +13,123 @@
     <title>Porfolio</title>
 </head>
 <body>
-    <div>
-        <h1>Profile</h1>
-        <div class="profile-wrapper">
-            <img src="{{ profile.image.url }}" class="profile-image" />
-            <div class="profile-content">
-                {% if profile %}
-                    <div class="profile-name-container">
-                        <p>Name:&nbsp;</p>
-                        <div class="profile-name">
-                            <p>{{ profile.first_name }}</p>
-                            <p>{{ profile.last_name }}</p>
-                        </div>
-                        <p>({{ profile.nickname }})</p>
-                    </div>
-                    <div class="profile-age-container">
-                        <p>Age:&nbsp;</p>
-                        <p>{{ profile.age }}</p>
-                    </div>
-                    <div class="profile-birth-date-container">
-                        <p>Birth Date:&nbsp;</p>
-                        <p>{{ profile.birth_date }}</p>
-                    </div>
-                    <div class="profile-contact-container">
-                        <p>Contact</p>
-                        <div class="profile-contact-content-container">
-                            <div class="profile-contact-content">
-                                <div class="mail-icon-wrapper"></div>
-                                <p>{{ profile.email }}</p>    
+    <div class="container">
+
+        <div>
+            <div class="profile-wrapper">
+                <img src="{{ profile.image.url }}" class="profile-image" />
+                <div class="profile-content">
+                    {% if profile %}
+                        <div class="profile-name-container">
+                            <p class="profile-text">Name:&nbsp;</p>
+                            <div class="profile-name">
+                                <p class="profile-text">{{ profile.first_name }}</p>
+                                <p class="profile-text">{{ profile.last_name }}</p>
                             </div>
-                            <div class="profile-contact-content">
-                                <div class="phone-icon-wrapper"></div>
-                                <p>{{ profile.phone }}</p>            
+                            <p class="profile-text">({{ profile.nickname }})</p>
+                        </div>
+                        <div class="profile-age-container">
+                            <p class="profile-text">Age:&nbsp;</p>
+                            <p class="profile-text">{{ profile.age }}</p>
+                        </div>
+                        <div class="profile-birth-date-container">
+                            <p class="profile-text">Birth Date:&nbsp;</p>
+                            <p class="profile-text">{{ profile.birth_date }}</p>
+                        </div>
+                        <div class="profile-contact-container">
+                            <p class="profile-text profile-text-bold">Contact</p>
+                            <div class="profile-contact-content-container">
+                                <div class="profile-contact-content">
+                                    <div class="mail-icon-wrapper"></div>
+                                    <p class="profile-text">{{ profile.email }}</p>    
+                                </div>
+                                <div class="profile-contact-content">
+                                    <div class="phone-icon-wrapper"></div>
+                                    <p class="profile-text">{{ profile.phone }}</p>            
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endif %}        
+                    {% endif %}        
+                </div>
             </div>
         </div>
-    </div>
-
-    <div>
-        <h1>Activities</h1>
-        <div class="activity-wrapper">
-            {% if activities %}
-                {% for activity in activities %}
-                    <div class="activity-card">
-                        <p class="">{{ activity.name }}</p>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-    </div>
-
-    <div>
-        <h1>Skills</h1>
-        <div class="skill-wrapper">
-            <div class="skill-container">
-                {% if skills %}
-                {% for skill in skills %}
-                    <img src="{{ skill.image.url }}" class="skill-logo-wrapper">
+    
+        <div>
+            <h1>Activities</h1>
+            <div class="activity-wrapper">
+                {% if activities %}
+                    {% for activity in activities %}
+                        <div class="activity-card">
+                            <p class="activity-text">{{ activity.name }}</p>
+                        </div>
                     {% endfor %}
                 {% endif %}
             </div>
         </div>
-    </div>
-
-    <div>
-        <h1>Projects</h1>
-        <div class="project-wrapper">
-            <div class="project-container">
-                {% if projects %}
-                    {% for project in projects %}
-                        {% if project.link != "-" %}
-                            <a href="{{ project.link }}" target="__blank" class="project-link">
-                                <div class="project-card-link">
-                                    <p>{{ project.name }}</p>
-                                    <p>{{ project.description }}</p>                                   
-                                </div>
-                            </a>
-                        {% else %}
-                            <div class="project-card">
-                                <p>{{ project.name }}</p>
-                                <p>{{ project.description }}</p>                                   
-                            </div>
-                        {% endif %}
-                    {% endfor %}                   
-                {% endif %}        
+    
+        <div>
+            <h1>Skills</h1>
+            <div class="skill-wrapper">
+                <div class="skill-container">
+                    {% if skills %}
+                    {% for skill in skills %}
+                        <img src="{{ skill.image.url }}" class="skill-logo-wrapper">
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-
-    <div>
-        <h1>Last 3 Contacts</h1>
-        <div class="contact-me-wrapper">
-            {% if contacts %}
-                {% for contact in contacts %}
-                    <div class="contact-me-card">
-                        <p>From: {{ contact.email }}</p>&nbsp;
-                        <p>{{ contact.subject }}</p>
-                    </div>
-                {% endfor %}
-            {% endif %}    
+    
+        <div>
+            <h1>Projects</h1>
+            <div class="project-wrapper">
+                <div class="project-container">
+                    {% if projects %}
+                        {% for project in projects %}
+                            {% if project.link != "-" %}
+                                <a href="{{ project.link }}" target="__blank" class="project-link">
+                                    <div class="project-card-link">
+                                        <p class="project-text-bold">{{ project.name }}</p>
+                                        <p>{{ project.description }}</p>                                   
+                                    </div>
+                                </a>
+                            {% else %}
+                                <div class="project-card">
+                                    <p class="project-text-bold">{{ project.name }}</p>
+                                    <p>{{ project.description }}</p>                                   
+                                </div>
+                            {% endif %}
+                        {% endfor %}                   
+                    {% endif %}        
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div>
-        <form action="{% url 'portfolio:contact-me' %}" method="post" class="contact-form">
-            {% csrf_token %}
-            <input type="email" name="email" id="email" placeholder="email" class="contact-input">
-            <input type="text" name="subject" id="subject" placeholder="subject" class="contact-input">
-            <input type="text" name="message" id="message" placeholder="message" class="contact-input">
-            <button type="submit" class="contact-button">Send</button>
-        </form>    
+    
+        <div>
+            <h1>Last 3 Contacts</h1>
+            <div class="contact-me-wrapper">
+                {% if contacts %}
+                    {% for contact in contacts %}
+                        <div class="contact-me-card">
+                            <p>From: {{ contact.email }}</p>
+                            <p>Date: {{ contact.sent_date }}</p>
+                            <p>{{ contact.subject }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}    
+            </div>
+        </div>
+    
+        <div class="contact-form-container">
+            <form action="{% url 'portfolio:contact-me' %}" method="post" class="contact-form">
+                {% csrf_token %}
+                <input type="email" name="email" id="email" placeholder="email" class="contact-input">
+                <input type="text" name="subject" id="subject" placeholder="subject" class="contact-input">
+                <input type="text" name="message" id="message" placeholder="message" class="contact-input">
+                <button type="submit" class="contact-button">Send</button>
+            </form>    
+        </div>
+    
     </div>
 </body>
 </html>

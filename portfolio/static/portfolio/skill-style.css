@@ -12,11 +12,13 @@
 
 .skill-logo-wrapper {
   width: 180px;
-  border: 2px solid #ffffff;
+  border: 2px solid #000000;
 
   border-radius: 10px;
 }
 
 .skill-logo-wrapper:hover {
-  border: 2px solid black;
+  border: 2px solid #ffffff;
+  transform: translateY(-2px);
+  transition: 0.3s;
 }
