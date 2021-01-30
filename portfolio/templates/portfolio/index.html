@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    {% if profile %}
+        <p>{{ profile.first_name }}</p>
+        <p>{{ profile.last_name }}</p>
+        <p>{{ profile.nickname }}</p>
+        <p>{{ profile.age }}</p>
+        <p>{{ profile.email }}</p>
+        <p>{{ profile.phone }}</p>
+        <p>{{ profile.birth_date }}</p>
+        <img src="{{ profile.image.url }}" />
+    {% endif %}
+
+    <h1>Projects</h1>
+    {% if projects %}
+        {% for project in projects %}
+            <p>{{ project.name }}</p>
+            <p>{{ project.description }}</p>
+            <a href="{{ project.link }}"></a>
+        {% endfor %}
+    {% endif %}
+
+    <h1>Skills</h1>
+    {% if skills %}
+        {% for skill in skills %}
+            <p>{{ skill.name }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <h1>Activities</h1>
+    {% if activities %}
+        {% for activity in activities %}
+            <p>{{ activity.name }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
