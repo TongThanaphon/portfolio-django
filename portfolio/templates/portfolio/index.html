@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/profile-style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/skill-style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/activity-style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/project-style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/contact-me-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/profile-style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/skill-style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/activity-style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/project-style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/contact-style.css' %}" />
     <title>Porfolio</title>
 </head>
 <body>
@@ -118,12 +118,14 @@
         </div>
     </div>
 
-    <form action="{% url 'portfolio:contact-me' %}" method="post">
-        {% csrf_token %}
-        <input type="email" name="email" id="email" placeholder="email">
-        <input type="text" name="subject" id="subject" placeholder="subject">
-        <input type="text" name="message" id="message" placeholder="message">
-        <button type="submit">Send</button>
-    </form>
+    <div>
+        <form action="{% url 'portfolio:contact-me' %}" method="post" class="contact-form">
+            {% csrf_token %}
+            <input type="email" name="email" id="email" placeholder="email" class="contact-input">
+            <input type="text" name="subject" id="subject" placeholder="subject" class="contact-input">
+            <input type="text" name="message" id="message" placeholder="message" class="contact-input">
+            <button type="submit" class="contact-button">Send</button>
+        </form>    
+    </div>
 </body>
 </html>

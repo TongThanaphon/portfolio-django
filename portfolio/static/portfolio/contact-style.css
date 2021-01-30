@@ -1,0 +1,43 @@
+.contact-me-wrapper {
+  width: 100%;
+}
+
+.contact-me-wrapper > * + * {
+  margin-top: 10px;
+}
+
+.contact-me-card {
+  border: 2px solid black;
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+.contact-me-card:hover {
+  border: 2px solid red;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.contact-form > * + * {
+  margin-top: 10px;
+}
+
+.contact-input {
+  height: 30px;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.contact-button {
+  border-radius: 10px;
+  height: 30px;
+  width: 30%;
+}
