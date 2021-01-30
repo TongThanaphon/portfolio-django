@@ -1,0 +1,50 @@
+.project-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 200px;
+
+  padding: 10px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.project-card-link:hover {
+  border: 2px solid red;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 200px;
+
+  padding: 10px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: black;
+}

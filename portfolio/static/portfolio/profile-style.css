@@ -1,0 +1,78 @@
+.profile-wrapper {
+  display: flex;
+  padding: 0 40px;
+}
+
+.profile-wrapper > * + * {
+  margin-left: 40px;
+}
+
+.profile-image {
+  width: 250px;
+
+  border-radius: 10px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-content > * + * {
+  margin-top: 10px;
+}
+
+.profile-name-container {
+  display: flex;
+}
+
+.profile-name-container > div + p,
+.profile-name > p + p {
+  margin-left: 10px;
+}
+
+.profile-name {
+  display: flex;
+}
+
+.profile-age-container {
+  display: flex;
+}
+
+.profile-birth-date-container {
+  display: flex;
+}
+
+.profile-contact-container {
+  margin-top: 10px;
+}
+
+.profile-contact-container {
+}
+
+.profile-contact-content-container > div {
+  margin-top: 10px;
+}
+
+.profile-contact-content {
+  display: flex;
+}
+
+.profile-contact-content > * + * {
+  margin-left: 10px;
+}
+
+.mail-icon-wrapper {
+  background-image: url("images/mail.png");
+  background-size: contain;
+
+  padding: 12px;
+}
+
+.phone-icon-wrapper {
+  background-image: url("images/phone.png");
+  background-size: contain;
+
+  padding: 12px;
+}

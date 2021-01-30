@@ -3,42 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/profile-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/skill-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/activity-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/project-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/contact-me-style.css' %}">
     <title>Porfolio</title>
 </head>
 <body>
-    <h1>Profile</h1>
-    {% if profile %}
-        <p>{{ profile.first_name }}</p>
-        <p>{{ profile.last_name }}</p>
-        <p>{{ profile.nickname }}</p>
-        <p>{{ profile.age }}</p>
-        <p>{{ profile.email }}</p>
-        <p>{{ profile.phone }}</p>
-        <p>{{ profile.birth_date }}</p>
-        <img src="{{ profile.image.url }}" />
-    {% endif %}
+    <div>
+        <h1>Profile</h1>
+        <div class="profile-wrapper">
+            <img src="{{ profile.image.url }}" class="profile-image" />
+            <div class="profile-content">
+                {% if profile %}
+                    <div class="profile-name-container">
+                        <p>Name:&nbsp;</p>
+                        <div class="profile-name">
+                            <p>{{ profile.first_name }}</p>
+                            <p>{{ profile.last_name }}</p>
+                        </div>
+                        <p>({{ profile.nickname }})</p>
+                    </div>
+                    <div class="profile-age-container">
+                        <p>Age:&nbsp;</p>
+                        <p>{{ profile.age }}</p>
+                    </div>
+                    <div class="profile-birth-date-container">
+                        <p>Birth Date:&nbsp;</p>
+                        <p>{{ profile.birth_date }}</p>
+                    </div>
+                    <div class="profile-contact-container">
+                        <p>Contact</p>
+                        <div class="profile-contact-content-container">
+                            <div class="profile-contact-content">
+                                <div class="mail-icon-wrapper"></div>
+                                <p>{{ profile.email }}</p>    
+                            </div>
+                            <div class="profile-contact-content">
+                                <div class="phone-icon-wrapper"></div>
+                                <p>{{ profile.phone }}</p>            
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}        
+            </div>
+        </div>
+    </div>
 
-    <h1>Projects</h1>
-    {% if projects %}
-        {% for project in projects %}
-            <p>{{ project.name }}</p>
-            <p>{{ project.description }}</p>
-            <a href="{{ project.link }}"></a>
-        {% endfor %}
-    {% endif %}
+    <div>
+        <h1>Activities</h1>
+        <div class="activity-wrapper">
+            {% if activities %}
+                {% for activity in activities %}
+                    <div class="activity-card">
+                        <p class="">{{ activity.name }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 
-    <h1>Skills</h1>
-    {% if skills %}
-        {% for skill in skills %}
-            <p>{{ skill.name }}</p>
-        {% endfor %}
-    {% endif %}
+    <div>
+        <h1>Skills</h1>
+        <div class="skill-wrapper">
+            <div class="skill-container">
+                {% if skills %}
+                {% for skill in skills %}
+                    <img src="{{ skill.image.url }}" class="skill-logo-wrapper">
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
-    <h1>Activities</h1>
-    {% if activities %}
-        {% for activity in activities %}
-            <p>{{ activity.name }}</p>
-        {% endfor %}
-    {% endif %}
+    <div>
+        <h1>Projects</h1>
+        <div class="project-wrapper">
+            <div class="project-container">
+                {% if projects %}
+                    {% for project in projects %}
+                        {% if project.link != "-" %}
+                            <a href="{{ project.link }}" target="__blank" class="project-link">
+                                <div class="project-card-link">
+                                    <p>{{ project.name }}</p>
+                                    <p>{{ project.description }}</p>                                   
+                                </div>
+                            </a>
+                        {% else %}
+                            <div class="project-card">
+                                <p>{{ project.name }}</p>
+                                <p>{{ project.description }}</p>                                   
+                            </div>
+                        {% endif %}
+                    {% endfor %}                   
+                {% endif %}        
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1>Last 3 Contacts</h1>
+        <div class="contact-me-wrapper">
+            {% if contacts %}
+                {% for contact in contacts %}
+                    <div class="contact-me-card">
+                        <p>From: {{ contact.email }}</p>&nbsp;
+                        <p>{{ contact.subject }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}    
+        </div>
+    </div>
+
+    <form action="{% url 'portfolio:contact-me' %}" method="post">
+        {% csrf_token %}
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="text" name="subject" id="subject" placeholder="subject">
+        <input type="text" name="message" id="message" placeholder="message">
+        <button type="submit">Send</button>
+    </form>
 </body>
 </html>

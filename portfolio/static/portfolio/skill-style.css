@@ -1,0 +1,22 @@
+.skill-wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.skill-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill-logo-wrapper {
+  width: 180px;
+  border: 2px solid #ffffff;
+
+  border-radius: 10px;
+}
+
+.skill-logo-wrapper:hover {
+  border: 2px solid black;
+}

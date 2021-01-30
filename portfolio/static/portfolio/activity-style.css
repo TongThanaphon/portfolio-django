@@ -1,0 +1,25 @@
+.activity-wrapper {
+  display: flex;
+}
+
+.activity-wrapper > div + div {
+  margin-left: 20px;
+}
+
+.activity-card {
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+
+  background-color: #f9f9f9;
+
+  padding: 10px;
+
+  cursor: default;
+
+  width: max-content;
+}
+
+.activity-card:hover {
+  background-color: #d9d9d9;
+  /* transform: translateY(-5px); */
+}
