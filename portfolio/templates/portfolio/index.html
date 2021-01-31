@@ -111,9 +111,12 @@
                 {% if contacts %}
                     {% for contact in contacts %}
                         <div class="contact-me-card">
-                            <p>From: {{ contact.email }}</p>
-                            <p>Date: {{ contact.sent_date }}</p>
-                            <p>{{ contact.subject }}</p>
+                            <div class="contact-me-card-header">
+                                <p>From: {{ contact.email }}</p>
+                                <p>Date: {{ contact.sent_date }}</p>    
+                            </div>
+                            <p>Subject: {{ contact.subject }}</p>
+                            <p>{{ contact.message }}</p>
                         </div>
                     {% endfor %}
                 {% endif %}    

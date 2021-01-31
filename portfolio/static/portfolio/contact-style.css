@@ -14,7 +14,7 @@
   padding: 10px;
 }
 
-.contact-me-card > p + p {
+.contact-me-card > * + * {
   margin-top: 10px;
 }
 
@@ -68,4 +68,11 @@
 
   transform: translateY(-2px);
   transition: 0.3s;
+}
+
+.contact-me-card-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
